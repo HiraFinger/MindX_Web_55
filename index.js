@@ -5,7 +5,8 @@ const router = require("./routers");
 const { connectToDb } = require("./database");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT ||5001;
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/assets", express.static("assets"));
